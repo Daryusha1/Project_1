@@ -7,7 +7,7 @@ from handlers import router
 
 async def main():
     #создаем бота с токеном, который я получила от BotFather
-    bot = Bot(token='7526343847:AAF6Y8sdR5YPCQ9-O--dwmcdLdzixRKQzm4')
+    bot = Bot(token='API_TOKEN')
 
     #диспетчер, который будет управлять обработкой сообщений и используем MemoryStorage для временного хранения состояний
     dp = Dispatcher(storage=MemoryStorage())
