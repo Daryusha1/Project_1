@@ -2,7 +2,7 @@
 Этот модуль реализует бота-напоминателя с использованием библиотеки aiogram.
 
 Функции бота:
-- Обработка команд /start и /help для взаимодействия с пользователем.
+- Обработка команд /start и /help для взаимодействия бота с пользователем.
 - Добавление новых напоминаний с указанием времени и текста.
 - Просмотр всех установленных пользователем напоминаний.
 - Отправка напоминаний в указанное время.
@@ -89,10 +89,10 @@ async def process_input(message: Message):
             await message.reply("Неправильный формат даты и времени. Пожалуйста, используй формат 'YYYY-MM-DD HH:MM'.")
             return
 
-    # Проверка наличия установленного времени для напоминания
+    #проверка наличия установленного времени для напоминания
     elif reminders[user_id] and 'reminder_datetime' in reminders[user_id][-1]:
         reminder_message = message.text
-        reminders[user_id][-1]['reminder_message'] = reminder_message  # Сохраняем текст сообщения напоминания
+        reminders[user_id][-1]['reminder_message'] = reminder_message  #сохраняем текст сообщения напоминания
 
         reminder_datetime = reminders[user_id][-1]['reminder_datetime']
         now = datetime.datetime.now()
